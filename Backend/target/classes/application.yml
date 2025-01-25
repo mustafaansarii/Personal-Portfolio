@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: Portfolio-server
+
+  datasource:
+    url: ${JDBC_URL}
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    show-sql: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+frontend:
+  local:
+    url: ${LOCAL_URI}
+  live:
+    url: ${LIVE_URL}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+
+
