@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS styles
 import { useProjects } from '../Auth/ProjectAuth';
 
 const Projects = () => {
@@ -9,9 +7,6 @@ const Projects = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Initialize AOS
-    AOS.init({ duration: 1000, once: true });
-
     const fetchProjects = async () => {
       setIsLoading(true); // Reset loading state
       const { data, error } = await useProjects();
@@ -47,7 +42,6 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            data-aos="fade-up" // AOS animation
             className="dark:border-gray-500 border-2 border-black rounded-lg shadow hover:shadow-lg transition-shadow duration-300 dark:hover:bg-gray-700"
           >
             <a href={project.liveLink}>

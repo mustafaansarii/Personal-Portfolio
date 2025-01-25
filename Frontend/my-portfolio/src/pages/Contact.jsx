@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import AOS from 'aos'; // Import AOS for animations
-import 'aos/dist/aos.css'; // Import AOS styles
+import React, { useState } from 'react';
 import config from '../config';
 
 const Contact = () => {
@@ -12,11 +10,6 @@ const Contact = () => {
     phoneNumber: '',
     message: '',
   });
-
-  // Initialize AOS on component mount
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,10 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <div
-      data-aos="fade-up" // Apply AOS animation
-      className="container mx-auto p-6 rounded-lg shadow-lg max-w-2xl mt-10 border mb-10"
-    >
+    <div className="container mx-auto p-6 rounded-lg shadow-lg max-w-2xl mt-10 border mb-10">
       <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-50 mb-6">
         Contact Me
       </h2>
@@ -93,20 +83,6 @@ const Contact = () => {
         </div>
 
         {/* Single Inputs */}
-        {/* <div className="flex flex-col">
-          <label className="text-gray-600 dark:text-gray-50 font-medium mb-2">
-            Company:
-          </label>
-          <input
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            required
-            className="p-3 border-2 border-gray-300 dark:bg-slate-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div> */}
-
         <div className="flex flex-col">
           <label className="text-gray-600 dark:text-gray-50 font-medium mb-2">
             Email:

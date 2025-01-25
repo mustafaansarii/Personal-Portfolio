@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 
 const skills = {
   frontend: [
@@ -30,26 +28,22 @@ const skills = {
 };
 
 function Skills() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
     <div className="text-gray-800 dark:text-white py-16 px-6 sm:px-16">
       <div className="max-w-[900px] mx-auto text-left">
-        <h2 className="text-4xl font-bold tracking-tight text-center" data-aos="fade-up">Skills</h2>
-        <p className="mt-2 text-sm text-black dark:text-gray-400 text-center" data-aos="fade-up" data-aos-delay="200">
+        <h2 className="text-4xl font-bold tracking-tight text-center">Skills</h2>
+        <p className="mt-2 text-sm text-black dark:text-gray-400 text-center">
           I specialize in various modern technologies to build scalable, responsive, and efficient solutions.
         </p>
 
         <div className="mt-8">
           {/* Frontend Section */}
           <div className="mb-8">
-            <h3 className="text-sm font-semibold text-black dark:text-gray-200" data-aos="fade-right">Frontend</h3>
-            <p className="mt-2 text-sm text-black dark:text-gray-400" data-aos="fade-right" data-aos-delay="200">
+            <h3 className="text-sm font-semibold text-black dark:text-gray-200">Frontend</h3>
+            <p className="mt-2 text-sm text-black dark:text-gray-400">
               I craft intuitive and responsive web applications using these modern technologies. I prioritize performance, accessibility, and seamless user experience, delivering high-quality products.
             </p>
-            <div className="flex flex-wrap justify-start mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="flex flex-wrap justify-start mt-4">
               {skills.frontend.map((skill) => (
                 <img
                   key={skill.name}
@@ -63,11 +57,11 @@ function Skills() {
 
           {/* Backend Section */}
           <div className="mb-8">
-            <h3 className="text-sm font-semibold text-black dark:text-gray-400" data-aos="fade-left">Backend</h3>
-            <p className="mt-2 text-sm text-black dark:text-gray-400" data-aos="fade-left" data-aos-delay="200">
+            <h3 className="text-sm font-semibold text-black dark:text-gray-400">Backend</h3>
+            <p className="mt-2 text-sm text-black dark:text-gray-400">
               I build robust and scalable backend systems using modern technologies. I prioritize performance, security, and seamless integration with frontend applications, delivering high-quality, reliable, and efficient solutions.
             </p>
-            <div className="flex flex-wrap justify-start mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="flex flex-wrap justify-start mt-4">
               {skills.backend.map((skill) => (
                 <img
                   key={skill.name}
@@ -81,11 +75,11 @@ function Skills() {
 
           {/* Others Section */}
           <div className="mb-8">
-            <h3 className="text-sm font-semibold text-black dark:text-gray-400" data-aos="fade-right">Others</h3>
-            <p className="text-sm mt-2 text-black dark:text-gray-400" data-aos="fade-right" data-aos-delay="200">
+            <h3 className="text-sm font-semibold text-black dark:text-gray-400">Others</h3>
+            <p className="text-sm mt-2 text-black dark:text-gray-400">
               I have experience working with a variety of technologies, tools, and platforms. I am always eager to learn new technologies and expand my skill set. I am proficient in using these technologies to solve complex problems.
             </p>
-            <div className="flex flex-wrap justify-start mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="flex flex-wrap justify-start mt-4">
               {skills.others.map((skill) => (
                 <img
                   key={skill.name}

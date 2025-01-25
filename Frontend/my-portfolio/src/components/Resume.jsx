@@ -1,16 +1,6 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 export default function Resume() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-in-out", // Animation easing
-      once: true, // Only animate once
-    });
-  }, []);
-
   const timelineData = [
     {
       year: "2019",
@@ -40,10 +30,7 @@ export default function Resume() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-gray-900 dark:text-gray-50">
-      <h2
-        className="text-4xl font-bold text-center mb-8"
-        data-aos="fade-up"
-      >
+      <h2 className="text-4xl font-bold text-center mb-8">
         Resume
       </h2>
       <div className="relative">
@@ -66,8 +53,6 @@ export default function Resume() {
               className={`flex flex-col sm:flex-row ${
                 index % 2 === 0 ? "justify-start" : "justify-end"
               } items-center`}
-              data-aos="fade-up"
-              data-aos-delay={`${index * 200}`} // Delays animations sequentially
             >
               <div className="flex flex-col items-center w-full sm:w-1/2">
                 {index % 2 === 0 && (
@@ -84,10 +69,7 @@ export default function Resume() {
                   </div>
                 )}
               </div>
-              <div
-                className="w-6 h-6 sm:w-8 sm:h-8 bg-teal-500 rounded-full flex-shrink-0 mx-6"
-                data-aos="zoom-in"
-              >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-teal-500 rounded-full flex-shrink-0 mx-6">
                 <span className="text-xs sm:text-xl dark:text-white flex justify-center items-center">
                   {item.year}
                 </span>

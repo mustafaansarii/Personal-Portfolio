@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 const links = [
   { name: "My Skills & Experience", href: "#" },
@@ -21,45 +19,23 @@ function classNames(...classes) {
 }
 
 export default function About() {
-  useEffect(() => {
-    AOS.init({
-      offset: 100, // Offset to trigger animation
-      duration: 600, // Animation duration
-      easing: "ease-in-out", // Easing function
-      once: true, // Animation occurs only once
-    });
-  }, []);
-
   return (
     <div className="flex flex-col items-center justify-center py-10 dark:text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:mx-0">
-          {/* Heading */}
-          <h2
-            className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center"
-            data-aos="fade-up"
-          >
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
             About Me
           </h2>
-
-          {/* Card */}
           <a
             href="#"
             className="flex flex-col items-center border-2 border-black dark:border-black shadow md:flex-row max-w-3xl md:max-w-2xl lg:max-w-4xl mx-auto"
-            data-aos="fade-right"
           >
-            {/* Image */}
             <img
               className="w-full h-auto rounded-t-lg sm:w-[120px] sm:h-[120px] md:h-[150px] md:w-[150px] lg:w-[200px] lg:h-[200px] object-cover md:rounded-none md:rounded-l-lg"
               src="/portrait.png"
               alt="About Me"
             />
-
-            {/* Text Section */}
-            <div
-              className="flex flex-col justify-between p-4 leading-normal"
-              data-aos="fade-left"
-            >
+            <div className="flex flex-col justify-between p-4 leading-normal">
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm sm:text-base lg:text-lg">
                 I am a B.Tech student in Computer Science Engineering at
                 Maharishi Markandeshwar University. With over 1000 solved coding
@@ -75,10 +51,7 @@ export default function About() {
         </div>
 
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div
-            className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10"
-            data-aos="fade-up"
-          >
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
             {links.map((link) => (
               <a
                 key={link.name}
@@ -90,10 +63,7 @@ export default function About() {
               </a>
             ))}
           </div>
-          <dl
-            className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
-            data-aos="zoom-in"
-          >
+          <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse gap-1">
                 <dt className="text-base/7 text-gray-900 dark:text-white">
