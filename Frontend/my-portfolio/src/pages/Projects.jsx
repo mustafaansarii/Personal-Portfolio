@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useProjects } from '../Auth/ProjectAuth';
+import { Chip, Stack } from '@mui/material'; // Import MUI components
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -52,6 +53,19 @@ const Projects = () => {
               />
             </a>
             <div className="p-5">
+              {/* Tech Stack */}
+              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+                {project.techStack.map((tech, index) => (
+                  <Chip
+                    key={index}
+                    label={tech}
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                  />
+                ))}
+              </Stack>
+
               <a href={project.liveLink}>
                 <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-400">
                   {project.title}

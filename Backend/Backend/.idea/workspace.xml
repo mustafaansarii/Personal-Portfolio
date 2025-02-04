@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="025e84ab-705a-4d08-b171-6204ea69672e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Config/MailConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/ContactController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/Health.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/OTPController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/ProjectController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/ResumeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Controller/SocialController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/AdminModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/ContactForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/OTP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/Resume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Model/Social.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/PortfolioServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Repository/AdminRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Repository/OTPRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Repository/ProjectRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Repository/ResumeRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Repository/SocialRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/OTPService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/ProjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/ResumeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/portfolio/mustafa/Portfolio_server/Services/SocialService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/portfolio/mustafa/Portfolio_server/PortfolioServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/Portfolio-server-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/Portfolio-server-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Config/MailConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/ContactController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/Health.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/OTPController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/ProjectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/ResumeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Controller/SocialController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/AdminModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/ContactForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/OTP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/Resume.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Model/Social.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/PortfolioServerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Repository/AdminRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Repository/OTPRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Repository/ProjectRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Repository/ResumeRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Repository/SocialRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/EmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/OTPService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/ProjectService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/ResumeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/portfolio/mustafa/Portfolio_server/Services/SocialService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/surefire-reports/TEST-portfolio.mustafa.Portfolio_server.PortfolioServerApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/surefire-reports/portfolio.mustafa.Portfolio_server.PortfolioServerApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/portfolio/mustafa/Portfolio_server/PortfolioServerApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_icons-material_PriorityHigh.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_icons-material_PriorityHigh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_icons-material_PriorityHigh.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_icons-material_PriorityHigh.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_joy_Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_joy_Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_Button.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_Button.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_TextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_TextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_TextField.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/@mui_material_TextField.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/chunk-43CEPB3C.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/chunk-43CEPB3C.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/chunk-XPVG6FWQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/node_modules/.vite/deps/chunk-XPVG6FWQ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/Admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/AdminDataAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/AdminDataAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/Admin/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/my-portfolio/src/config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2sZ6f2c5spJBZwyyRTLxDqoygA3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PortfolioServerApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/mustafa/Learning/Projects/Personal Portfolio /Backend/Portfolio-server"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="PortfolioServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="JDBC_URL" value="jdbc:postgresql://ep-twilight-credit-a8wq053q.eastus2.azure.neon.tech:5432/portfolio?user=portfolio_owner&amp;password=Kz5RnQEeP9wm&amp;sslmode=require" />
+        <env name="LIVE_URL" value="http://localhost:5173/" />
+        <env name="LOCAL_URI" value="https://www.mustafaansari.in" />
+        <env name="MAIL_PASSWORD" value="zhoz xaqr xnse dmpj" />
+        <env name="MAIL_USERNAME" value="mustafaa.edu@gmail.com" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="portfolio.mustafa.Portfolio_server.PortfolioServerApplication" />
+      <module name="Portfolio-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="portfolio.mustafa.Portfolio_server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PortfolioServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="025e84ab-705a-4d08-b171-6204ea69672e" name="Changes" comment="" />
+      <created>1738650849311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738650849311</updated>
+    </task>
+    <servers />
+  </component>
+</project>
