@@ -17,7 +17,7 @@ const Projects = () => {
     };
 
     fetchProjects();
-  }, []); // Empty dependency array to run once when the component mounts
+  }, []); 
 
   if (isLoading) {
     return (
@@ -43,7 +43,7 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="dark:border-gray-500 border-2 border-black rounded-lg shadow hover:shadow-lg transition-shadow duration-300 dark:hover:bg-gray-700"
+            className="dark:border-gray-500 border-2 border-black rounded-lg shadow hover:shadow-lg transition-shadow duration-300 "
           >
             <a href={project.liveLink}>
               <img
@@ -71,7 +71,7 @@ const Projects = () => {
                   {project.title}
                 </h5>
               </a>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              <p className="mb-3 text-gray-700 dark:text-gray-400 text-sm">
                 {project.description}
               </p>
 
