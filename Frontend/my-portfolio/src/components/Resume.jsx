@@ -30,8 +30,8 @@ export default function Resume() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-gray-900 dark:text-gray-50">
-      <h2 className="text-4xl font-bold text-center mb-8">
-        Resume
+      <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+        Professional Journey
       </h2>
       <div className="relative">
         <svg
@@ -41,10 +41,16 @@ export default function Resume() {
         >
           <path
             d="M50 0 C70 100, 30 200, 50 300 C70 400, 30 500, 50 600"
-            stroke="#38bdf8"
+            stroke="url(#timelineGradient)"
             strokeWidth="15"
             fill="none"
           />
+          <defs>
+            <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#0d9488', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#0284c7', stopOpacity: 1}} />
+            </linearGradient>
+          </defs>
         </svg>
         <div className="relative z-10 space-y-12 sm:space-y-16">
           {timelineData.map((item, index) => (
@@ -56,8 +62,8 @@ export default function Resume() {
             >
               <div className="flex flex-col items-center w-full sm:w-1/2">
                 {index % 2 === 0 && (
-                  <div className="border-2 border-black dark:border-white p-4 sm:p-6 rounded-xl shadow-xl transition-transform transform hover:translate-x-4 hover:shadow-2xl backdrop-blur-sm">
-                    <h3 className="text-sm sm:text-xl font-semibold text-teal-700">
+                  <div className="border-2 border-teal-500/20 dark:border-white/20 p-4 sm:p-6 rounded-xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/50 dark:bg-gray-800/50">
+                    <h3 className="text-sm sm:text-xl font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
                       {item.title}
                     </h3>
                     <p className="text-xs sm:text-md mt-2 dark:text-gray-50">
@@ -69,15 +75,15 @@ export default function Resume() {
                   </div>
                 )}
               </div>
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-teal-500 rounded-full flex-shrink-0 mx-6">
-                <span className="text-xs sm:text-xl dark:text-white flex justify-center items-center">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full flex-shrink-0 mx-6 shadow-lg">
+                <span className="text-xs sm:text-xl text-black flex justify-center items-center font-medium dark:text-white ">
                   {item.year}
                 </span>
               </div>
               <div className="flex flex-col items-center w-full sm:w-1/2">
                 {index % 2 !== 0 && (
-                  <div className="border-2 border-black dark:border-white p-4 sm:p-6 rounded-xl shadow-xl transition-transform transform hover:-translate-x-4 hover:shadow-2xl backdrop-blur-sm">
-                    <h3 className="text-sm sm:text-xl font-semibold text-teal-700">
+                  <div className="border-2 border-teal-500/20 dark:border-white/20 p-4 sm:p-6 rounded-xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/50 dark:bg-gray-800/50">
+                    <h3 className="text-sm sm:text-xl font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
                       {item.title}
                     </h3>
                     <p className="text-xs sm:text-md mt-2 dark:text-gray-50">

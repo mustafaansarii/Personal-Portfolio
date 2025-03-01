@@ -46,16 +46,15 @@ function Navbar() {
       <header className="absolute inset-x-0 top-0 z-50 w-full">
         <nav
           aria-label="Global"
-          className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-6 lg:px-8 backdrop-blur bg-white/70 dark:bg-black/70"
+          className="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 lg:px-6 backdrop-blur bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-700"
           style={{ background: "transparent" }}
         >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5 cursor-pointer">
               <span className="sr-only">Your Company</span>
-              <h1 className="text-2xl font-handwriting font-semibold  text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
+              <h1 className="text-xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
                 &lt;Mustafa Ansari/&gt;
               </h1>
-
             </a>
           </div>
 
@@ -77,7 +76,7 @@ function Navbar() {
                 to={item.href}
                 smooth={true}
                 duration={500}
-                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-white hover:border hover:border-black dark:hover:border-white"
+                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 hover:underline"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

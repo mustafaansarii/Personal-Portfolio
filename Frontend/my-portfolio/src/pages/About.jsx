@@ -23,12 +23,12 @@ export default function About() {
     <div className="flex flex-col items-center justify-center py-10 dark:text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:mx-0">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
             About Me
           </h2>
           <a
             href="#"
-            className="flex flex-col items-center border-2 border-black dark:border-black shadow md:flex-row max-w-3xl md:max-w-2xl lg:max-w-4xl mx-auto"
+            className="flex flex-col items-center border-2 border-black shadow md:flex-row max-w-3xl md:max-w-2xl lg:max-w-4xl mx-auto dark:border-gray-500"
           >
             <img
               className="w-full h-auto rounded-t-lg sm:w-[120px] sm:h-[120px] md:h-[150px] md:w-[150px] lg:w-[200px] lg:h-[200px] object-cover md:rounded-none md:rounded-l-lg"

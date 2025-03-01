@@ -9,10 +9,7 @@ import Skills from './pages/Skills';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Resume from './components/Resume';
-import Admin from './Admin/Admin';
-import Auth from './Admin/Auth';
-import ProfileLinkTree from './pages/ProfileLinkTree';
-import NotFound from "./NotFound"; // Import NotFound component
+import AdminConfig from './pages/admin_component/admin_config';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // State to manage authentication
@@ -48,25 +45,14 @@ function App() {
             }
           />
 
-          {/* Admin Route */}
-          <Route
-            path="/admin"
-            element={
-              isAuthenticated ? <Admin /> : <Navigate to="/auth" replace />
-            }
-          />
 
-          {/* Auth Route */}
-          <Route
-            path="/auth"
-            element={<Auth setIsAuthenticated={setIsAuthenticated} />}
-          />
           
-          {/* Profile Links Route */}
-          <Route path="/ProfileLinks" element={<ProfileLinkTree />} />
+          <Route
+            path="/adminpannel"
+            element={<AdminConfig />}
+          />
 
-          {/* Not Found Route (Catch-All for undefined routes) */}
-          <Route path="*" element={<NotFound />} />
+         
         </Routes>
       </div>
     </Router>

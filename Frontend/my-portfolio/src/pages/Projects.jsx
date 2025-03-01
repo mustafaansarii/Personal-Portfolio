@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useProjects } from '../Auth/ProjectAuth';
-import { Chip, Stack } from '@mui/material'; // Import MUI components
+import { CircularProgress, Alert, AlertTitle } from '@mui/material';
+import axios from 'axios';
+import config from '../config';
+const API_URL = config.Backend_Api + "/api/v1/projects"
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -8,87 +10,102 @@ const Projects = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchProjects = async () => {
-      setIsLoading(true); // Reset loading state
-      const { data, error } = await useProjects();
-      setProjects(data);
-      setError(error);
-      setIsLoading(false); // Reset loading state
+      setIsLoading(true);
+      try {
+        const response = await axios.get(API_URL);
+        if (isMounted) {
+          setProjects(response.data);
+          setError(null);
+        }
+      } catch (err) {
+        if (isMounted) setError(err.response?.data?.message || err.message);
+      } finally {
+        if (isMounted) setIsLoading(false);
+      }
     };
-
     fetchProjects();
-  }, []); 
+    return () => { isMounted = false; };
+  }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="loader border-t-transparent border-gray-400 border-4 rounded-full w-12 h-12 animate-spin"></div>
-      </div>
-    );
-  }
+  if (isLoading) return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <CircularProgress className="text-blue-600 dark:text-purple-500" size={60} />
+    </div>
+  );
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  if (error) return (
+    <div className="container mx-auto p-4 max-w-2xl">
+      <Alert severity="error" className="dark:bg-red-900/20">
+        <AlertTitle>Error</AlertTitle>
+        {error}
+      </Alert>
+    </div>
+  );
+
+  if (!projects.length) return (
+    <div className="container mx-auto p-4 max-w-2xl">
+      <Alert severity="info" className="dark:bg-blue-900/20">
+        <AlertTitle>No Projects Found</AlertTitle>
+        There are currently no projects to display.
+      </Alert>
+    </div>
+  );
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-4">
-      {/* Heading */}
-      <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-400 text-center">
-        Projects
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-300">
+        My Projects
       </h2>
 
-      {/* Project Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 max-w-screen-lg">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
         {projects.map((project) => (
-          <div
+          <div 
             key={project.id}
-            className="dark:border-gray-500 border-2 border-black rounded-lg shadow hover:shadow-lg transition-shadow duration-300 "
+            className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
           >
-            <a href={project.liveLink}>
+            <a href={project.liveLink} className="block overflow-hidden">
               <img
-                className="rounded-t-lg h-[200px] w-full object-cover"
+                className="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
                 src={project.imgSrc}
                 alt={project.title}
+                loading="lazy"
               />
             </a>
-            <div className="p-5">
-              {/* Tech Stack */}
-              <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+            
+            <div className="p-6 bg-white dark:bg-gray-800">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.techStack.map((tech, index) => (
-                  <Chip
+                  <span 
                     key={index}
-                    label={tech}
-                    variant="outlined"
-                    color="primary"
-                    size="small"
-                  />
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
+                  >
+                    {tech}
+                  </span>
                 ))}
-              </Stack>
+              </div>
 
-              <a href={project.liveLink}>
-                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-400">
+              <a href={project.liveLink} className="block mb-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   {project.title}
-                </h5>
+                </h3>
               </a>
-              <p className="mb-3 text-gray-700 dark:text-gray-400 text-sm">
+              
+              <p className="mb-5 text-gray-600 dark:text-gray-300 line-clamp-3">
                 {project.description}
               </p>
 
-              {/* Buttons */}
-              <div className="flex space-x-4">
-                {/* GitHub Button */}
+              <div className="flex gap-3">
                 <a
                   href={project.GitHubLink}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
+                  className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 dark:from-gray-600 dark:to-gray-700 dark:hover:from-gray-700 dark:hover:to-gray-800 transition-all shadow-md hover:shadow-lg"
                 >
                   GitHub
                 </a>
-
-                {/* Live Demo Button */}
                 <a
                   href={project.liveLink}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-blue-600 to-purple-500 text-white hover:from-blue-700 hover:to-purple-600 dark:from-blue-500 dark:to-purple-400 dark:hover:from-blue-600 dark:hover:to-purple-500 transition-all shadow-md hover:shadow-lg"
                 >
                   Live Demo
                 </a>
@@ -97,7 +114,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
