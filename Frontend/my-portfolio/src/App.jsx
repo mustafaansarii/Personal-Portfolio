@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import React, { useState } from "react"; 
+import React, { useState, useEffect } from "react"; 
 import './App.css';
 import Hero from './pages/Hero';
 import About from './pages/About';
@@ -10,9 +10,18 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Resume from './components/Resume';
 import AdminConfig from './pages/admin_component/admin_config';
+import AdminLogin from './pages/admin_component/AdminLogin';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to manage authentication
+  // Initialize isAuthenticated from localStorage
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem('isAuthenticated') === 'true'
+  );
+
+  // Update localStorage whenever isAuthenticated changes
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', isAuthenticated);
+  }, [isAuthenticated]);
 
   return (
     <Router>
@@ -49,7 +58,19 @@ function App() {
           
           <Route
             path="/adminpannel"
-            element={<AdminConfig />}
+            element={
+              isAuthenticated ? (
+                <AdminConfig />
+              ) : (
+                <Navigate to="/adminlogin" />
+              )
+            }
+          />
+          <Route
+            path="/adminlogin"
+            element={
+              <AdminLogin setIsAuthenticated={setIsAuthenticated} />
+            }
           />
 
          

@@ -64,7 +64,7 @@ export default function Hero() {
                 href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 md:p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+                className="p-2 md:p-2 rounded-full  hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-110"
               >
                 <span className="text-gray-700 dark:text-gray-200 hover:text-red-500 dark:hover:text-purple-400 text-xl md:text-xl">
                   {icon.icon}

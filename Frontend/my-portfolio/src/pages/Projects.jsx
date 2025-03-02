@@ -30,13 +30,13 @@ const Projects = () => {
   }, []);
 
   if (isLoading) return (
-    <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex items-center justify-center min-h-[60vh] max-w-[1200px] mx-auto">
       <CircularProgress className="text-blue-600 dark:text-purple-500" size={60} />
     </div>
   );
 
   if (error) return (
-    <div className="container mx-auto p-4 max-w-2xl">
+    <div className="max-w-[1200px] mx-auto p-4">
       <Alert severity="error" className="dark:bg-red-900/20">
         <AlertTitle>Error</AlertTitle>
         {error}
@@ -45,7 +45,7 @@ const Projects = () => {
   );
 
   if (!projects.length) return (
-    <div className="container mx-auto p-4 max-w-2xl">
+    <div className="max-w-[1200px] mx-auto p-4">
       <Alert severity="info" className="dark:bg-blue-900/20">
         <AlertTitle>No Projects Found</AlertTitle>
         There are currently no projects to display.
@@ -54,7 +54,7 @@ const Projects = () => {
   );
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-300">
         My Projects
       </h2>
