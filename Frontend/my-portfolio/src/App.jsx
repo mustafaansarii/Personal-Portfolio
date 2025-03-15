@@ -11,7 +11,6 @@ import Navbar from './components/Navbar';
 import Resume from './components/Resume';
 import AdminConfig from './pages/admin_component/admin_config';
 import AdminLogin from './pages/admin_component/AdminLogin';
-
 function App() {
   // Initialize isAuthenticated from localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -37,6 +36,7 @@ function App() {
                 <div id="about">
                   <About />
                 </div>
+                
                 <div id="Resume">
                   <Resume />
                 </div>
