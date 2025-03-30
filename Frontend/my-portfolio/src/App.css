@@ -1,36 +1,57 @@
-/* Modern Portfolio Theme with Smooth Transitions */
+/* Clean and Professional Theme */
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   min-height: 100vh;
-  font-smooth: always;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease;
+  font-smooth: always;
 }
 
 body {
-  position: relative;
-  background-color: #f8f5ff;
+  background-color: #ffffff;
   background-image: 
-    linear-gradient(to right, rgba(191, 191, 191, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(191, 191, 191, 0.1) 1px, transparent 1px),
-    radial-gradient(circle 800px at 100% 200px, rgba(200, 180, 255, 0.2), transparent);
-  background-size: 4rem 3rem, 4rem 3rem, auto;
-  background-repeat: repeat, repeat, no-repeat;
-  background-position: top left, top left, center;
-  color: #2d2d2d;
+    linear-gradient(to right, rgba(240, 240, 240, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(240, 240, 240, 0.1) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  background-repeat: repeat;
+  color: #333333;
+  line-height: 1.6;
 }
 
-/* Sophisticated Dark Mode */
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #0a0a0a;
     background-image: 
-      linear-gradient(to right, rgba(51, 51, 51, 0.15) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(51, 51, 51, 0.15) 1px, transparent 1px),
-      radial-gradient(circle 800px at 100% 200px, rgba(90, 70, 120, 0.25), transparent);
+      linear-gradient(to right, rgba(20, 20, 20, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20, 20, 20, 0.1) 1px, transparent 1px);
     color: #f5f5f5;
   }
+}
+
+/* Subtle Accent Glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background: radial-gradient(circle at 50% 0%, rgba(100, 100, 200, 0.1), transparent);
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }

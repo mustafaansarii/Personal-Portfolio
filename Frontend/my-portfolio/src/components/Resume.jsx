@@ -3,25 +3,21 @@ import React from "react";
 export default function Resume() {
   const timelineData = [
     {
-      year: "2019",
       title: "Secondary Education (2018-2019)",
       institution: "SMN High School, Sitamarhi",
       description: "Completed Secondary Education while actively participating in multiple quiz competitions, and engaging in various extracurricular activities.",
     },
     {
-      year: "2021",
       title: "Senior Secondary Education (2019-2021)",
       institution: "SMN Senior Secondary School, Sitamarhi",
       description: "Completed Senior Secondary Education, specialized in science and mathematics.",
     },
     {
-      year: "2026",
       title: "Bachelor of Technology (Computer Science)",
       institution: "Maharishi Markandeshwar (Deemed to be University), Mullana-Ambala",
       description: "Currently pursuing a Bachelor of Technology in Computer Science with multiple completed projects in Data Analysis and Full Stack Development.",
     },
     {
-      year: "2024",
       title: "Software Engineer Intern (Dec 2024 - Present)",
       institution: "Bluestock™ Fintech, Pune",
       description: "Currently leading a team working on real-time stock market analytics and trading platforms using Django and various JavaScript libraries. Focused on optimizing system performance and enhancing the user experience.",
@@ -29,71 +25,29 @@ export default function Resume() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-gray-900 dark:text-gray-50">
-      <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-        Professional Journey
-      </h2>
-      <div className="relative">
-        <svg
-          className="absolute w-full h-full"
-          viewBox="0 0 100 500"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path
-            d="M50 0 C70 100, 30 200, 50 300 C70 400, 30 500, 50 600"
-            stroke="url(#timelineGradient)"
-            strokeWidth="15"
-            fill="none"
-          />
-          <defs>
-            <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#0d9488', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#0284c7', stopOpacity: 1}} />
-            </linearGradient>
-          </defs>
-        </svg>
-        <div className="relative z-10 space-y-12 sm:space-y-16">
+    <div className="flex flex-col items-center justify-center py-12 dark:text-white px-4">
+      <div className="w-full max-w-[1000px]">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in">
+          Professional Journey
+        </h2>
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 w-0.5 h-full bg-gradient-to-b from-gray-300 via-gray-400 to-gray-300 dark:from-gray-700 dark:via-gray-600 dark:to-gray-700 transform -translate-x-1/2"></div>
+          
           {timelineData.map((item, index) => (
-            <div
-              key={index}
-              className={`flex flex-col sm:flex-row ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
-              } items-center`}
-            >
-              <div className="flex flex-col items-center w-full sm:w-1/2">
-                {index % 2 === 0 && (
-                  <div className="border-2 border-teal-500/20 dark:border-white/20 p-4 sm:p-6 rounded-xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/50 dark:bg-gray-800/50">
-                    <h3 className="text-sm sm:text-xl font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-md mt-2 dark:text-gray-50">
-                      {item.description}
-                    </p>
-                    <p className="mt-2 text-xs sm:text-sm text-teal-600">
-                      {item.institution}
-                    </p>
-                  </div>
-                )}
+            <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between mb-12 gap-2`}>
+              <div className={`w-full md:w-5/12 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-black/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 font-medium mb-2">{item.institution}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">{item.description}</p>
               </div>
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full flex-shrink-0 mx-6 shadow-lg">
-                <span className="text-xs sm:text-xl text-black flex justify-center items-center font-medium dark:text-white ">
+              <div className="w-8 flex justify-center order-first md:order-none">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400 border-4 border-white dark:border-gray-900 shadow-lg"></div>
+              </div>
+              <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                <h4 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                   {item.year}
-                </span>
-              </div>
-              <div className="flex flex-col items-center w-full sm:w-1/2">
-                {index % 2 !== 0 && (
-                  <div className="border-2 border-teal-500/20 dark:border-white/20 p-4 sm:p-6 rounded-xl shadow-xl transition-all transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm bg-white/50 dark:bg-gray-800/50">
-                    <h3 className="text-sm sm:text-xl font-semibold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-md mt-2 dark:text-gray-50">
-                      {item.description}
-                    </p>
-                    <p className="mt-2 text-xs sm:text-sm text-teal-600">
-                      {item.institution}
-                    </p>
-                  </div>
-                )}
+                </h4>
               </div>
             </div>
           ))}
