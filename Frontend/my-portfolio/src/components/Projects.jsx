@@ -51,7 +51,7 @@ const Projects = () => {
   );
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 backdrop-blur-lg bg-white/30 dark:bg-black/30 rounded-3xl">
+    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 backdrop-blur-lg  rounded-3xl">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-300">
         My Projects
       </h2>

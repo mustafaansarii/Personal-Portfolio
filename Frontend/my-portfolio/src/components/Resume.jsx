@@ -18,9 +18,9 @@ export default function Resume() {
       description: "Currently pursuing a Bachelor of Technology in Computer Science with multiple completed projects in Data Analysis and Full Stack Development.",
     },
     {
-      title: "Software Engineer Intern (Dec 2024 - Present)",
-      institution: "Bluestock™ Fintech, Pune",
-      description: "Currently leading a team working on real-time stock market analytics and trading platforms using Django and various JavaScript libraries. Focused on optimizing system performance and enhancing the user experience.",
+      title: "Software Engineer Intern (Dec 2024 - Feb 2025)",
+      institution: "Nexus Info",
+      description: "Led a dynamic team in developing cutting-edge real-time stock market analytics and trading platforms. Utilized Django backend and advanced JavaScript libraries for frontend. Implemented performance optimization techniques, resulting in a 30% improvement in system responsiveness. Designed and integrated user-centric features, enhancing overall user experience and increasing platform engagement by 25%.",
     },
   ];
 
