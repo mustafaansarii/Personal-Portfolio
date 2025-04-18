@@ -1,4 +1,17 @@
-/* Clean and Professional Theme */
+/* Modern Global Theme */
+:root {
+  --bg-light: #f8f9fa;
+  --bg-dark: #0d1117;
+  --text-light: #2d3748;
+  --text-dark: #e5e7eb;
+  --accent-light: #3b82f6;
+  --accent-dark: #60a5fa;
+  --grid-light: rgba(203, 213, 225, 0.1);
+  --grid-dark: rgba(31, 41, 55, 0.1);
+  --glow-light: rgba(59, 130, 246, 0.05);
+  --glow-dark: rgba(96, 165, 250, 0.1);
+}
+
 html,
 body {
   margin: 0;
@@ -7,31 +20,32 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   font-smooth: always;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--bg-light);
   background-image: 
-    linear-gradient(to right, rgba(240, 240, 240, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(240, 240, 240, 0.1) 1px, transparent 1px);
-  background-size: 4rem 4rem;
+    linear-gradient(to right, var(--grid-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-light) 1px, transparent 1px);
+  background-size: 3rem 3rem;
   background-repeat: repeat;
-  color: #333333;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #0a0a0a;
+    background-color: var(--bg-dark);
     background-image: 
-      linear-gradient(to right, rgba(20, 20, 20, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(20, 20, 20, 0.1) 1px, transparent 1px);
-    color: #f5f5f5;
+      linear-gradient(to right, var(--grid-dark) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-dark) 1px, transparent 1px);
+    color: var(--text-dark);
   }
 }
 
-/* Subtle Accent Glow */
+/* Dynamic Accent Glow */
 body::before {
   content: '';
   position: fixed;
@@ -39,19 +53,26 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent);
+  background: radial-gradient(circle at 50% 0%, var(--glow-light), transparent);
   pointer-events: none;
   z-index: -1;
+  transition: background 0.3s ease;
 }
 
 @media (prefers-color-scheme: dark) {
   body::before {
-    background: radial-gradient(circle at 50% 0%, rgba(100, 100, 200, 0.1), transparent);
+    background: radial-gradient(circle at 50% 0%, var(--glow-dark), transparent);
   }
 }
 
-/* Smooth Scrolling */
+/* Enhanced Smooth Scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 4rem;
+  scroll-snap-type: y proximity;
+}
+
+/* Scroll Snap Sections */
+section {
+  scroll-snap-align: start;
 }

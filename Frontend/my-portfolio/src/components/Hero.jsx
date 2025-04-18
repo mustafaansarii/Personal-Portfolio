@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-grid">
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"></div>
+      <div className="absolute inset-0"></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-8">
           <div className="space-y-4">
