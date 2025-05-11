@@ -7,7 +7,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    company: '',
     email: '',
     phoneNumber: '',
     message: '',
@@ -15,8 +14,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -25,28 +23,19 @@ const Contact = () => {
     try {
       const response = await fetch(config.Backend_Api + '/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        toast.success('Message sent successfully!');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          company: '',
-          email: '',
-          phoneNumber: '',
-          message: '',
-        });
+        toast.success('Message sent!');
+        setFormData({ firstName: '', lastName: '', email: '', phoneNumber: '', message: '' });
       } else {
-        toast.error('Error sending message. Please try again.');
+        toast.error('Failed to send. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('Error sending message. Please try again.');
+      toast.error('Failed to send. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -55,77 +44,46 @@ const Contact = () => {
   return (
     <div className="container mx-auto p-6 rounded-lg shadow-lg max-w-2xl border border-gray-100 dark:border-gray-700 py-10 mt-20">
       <ToastContainer />
-      <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-50 mb-8">
-        Get in Touch
-      </h2>
+      <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-50 mb-8">Get in Touch</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Grid for First and Last Name */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col">
+          {['firstName', 'lastName'].map((name) => (
+            <div className="flex flex-col" key={name}>
+              <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
+                {name === 'firstName' ? 'First Name' : 'Last Name'}
+              </label>
+              <input
+                type="text"
+                name={name}
+                value={formData[name]}
+                onChange={handleChange}
+                required
+                className="p-3 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder={`Enter your ${name === 'firstName' ? 'first' : 'last'} name`}
+              />
+            </div>
+          ))}
+        </div>
+
+        {['email', 'phoneNumber'].map((name) => (
+          <div className="flex flex-col" key={name}>
             <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
-              First Name
+              {name === 'email' ? 'Email' : 'Phone Number'}
             </label>
             <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
+              type={name === 'email' ? 'email' : 'text'}
+              name={name}
+              value={formData[name]}
               onChange={handleChange}
               required
               className="p-3 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-              placeholder="Enter your first name"
+              placeholder={`Enter your ${name === 'email' ? 'email' : 'phone number'}`}
             />
           </div>
-          <div className="flex flex-col">
-            <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
-              Last Name
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-              placeholder="Enter your last name"
-            />
-          </div>
-        </div>
-
-        {/* Single Inputs */}
-        <div className="flex flex-col">
-          <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-            placeholder="Enter your email"
-          />
-        </div>
+        ))}
 
         <div className="flex flex-col">
-          <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
-            Phone Number
-          </label>
-          <input
-            type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-            placeholder="Enter your phone number"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">
-            Message
-          </label>
+          <label className="text-gray-600 dark:text-gray-200 font-medium mb-2">Message</label>
           <textarea
             name="message"
             value={formData.message}
@@ -136,7 +94,6 @@ const Contact = () => {
           />
         </div>
 
-        {/* Submit Button */}
         <div className="flex justify-center">
           <button
             type="submit"

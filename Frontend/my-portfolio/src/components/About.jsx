@@ -1,11 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
-const links = [
-  { name: "My Skills & Experience", href: "#" },
-  { name: "Coding Challenges", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Contact Me", href: "#" },
-];
+import React from 'react';
+import { motion } from "framer-motion";
 
 const stats = [
   { name: "B.Tech", value: "3rd Year" },
@@ -14,55 +8,99 @@ const stats = [
   { name: "Certification", value: "1+" },
 ];
 
-export default function About() {
-  const [loading, setLoading] = useState(true);
+const fadeInAnimation = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, ease: "easeInOut" },
+};
 
+export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center py-12 dark:text-white px-4">
-      <div className="w-full max-w-[1000px] px-4">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="max-w-5xl mx-auto"
+        variants={fadeInAnimation}
+        initial="initial"
+        animate="animate"
+      >
+        <div className="text-center mb-12">
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500"
+            variants={fadeInAnimation}
+            transition={{ delay: 0.2 }}
+          >
             About Me
-          </h2>
-          <div className="flex flex-col md:flex-row items-center border border-gray-200 dark:border-gray-700 rounded-2xl  max-w-[1000px] mx-auto overflow-hidden bg-white/50 dark:bg-black/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
-            <div className="relative w-40 h-40 md:w-48 md:h-48 m-6 md:mr-8">
-              <img
-                className="w-full h-full object-cover rounded-lg border-4 border-white/50 dark:border-gray-800/50"
-                src="/portrait.png"
-                alt="About Me"
-              />
-              <div className="absolute inset-0 rounded-lg border-2 border-white/30 dark:border-gray-800/30 animate-ping-slow"></div>
-            </div>
-            <div className="p-6 flex-1">
-              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                I am a B.Tech student in Computer Science Engineering at
-                Maharishi Markandeshwar University. With over 1000 solved coding
-                challenges, I specialize in full-stack development using Java,
-                Python, JavaScript, React, Spring Boot, and Angular. I am
-                passionate about creating efficient, scalable web applications
-                and continuously seek innovative solutions. My goal is to
-                deliver impactful solutions and collaborate effectively in
-                dynamic teams.
-              </p>
-            </div>
-          </div>
+          </motion.h2>
+          <motion.p
+            className="mt-3 text-lg text-gray-600 dark:text-gray-400"
+            variants={fadeInAnimation}
+            transition={{ delay: 0.4 }}
+          >
+            Get to know me better.
+          </motion.p>
         </div>
 
-        <div className="mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          className="flex flex-col md:flex-row items-center rounded-xl overflow-hidden shadow-lg dark:shadow-md"
+          variants={fadeInAnimation}
+          transition={{ delay: 0.6 }}
+        >
+          <div className="md:w-1/3 ">
+            <img
+              className="w-full object-cover h-48 md:h-96"
+              src="/portrait.png"
+              alt="Mustafa Ansari"
+            />
+          </div>
+          <div className="md:w-2/3 p-8">
+            <motion.p
+              className="text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+              variants={fadeInAnimation}
+              transition={{ delay: 0.8 }}
+            >
+              I'm a B.Tech student diving deep into Computer Science Engineering. With a strong foundation built upon tackling 1000+ coding challenges, I specialize in crafting full-stack solutions using technologies like Java, Python, JavaScript, React, Spring Boot, and Angular.
+            </motion.p>
+            <motion.p
+              className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+              variants={fadeInAnimation}
+              transition={{ delay: 1.0 }}
+            >
+              My passion lies in developing efficient and scalable web applications, always seeking innovative approaches to complex problems. I'm driven to deliver impactful results and thrive in collaborative, dynamic team environments.
+            </motion.p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mt-12"
+          variants={fadeInAnimation}
+          transition={{ delay: 1.2 }}
+        >
+          <motion.h3
+            className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-3 text-center"
+            variants={fadeInAnimation}
+            transition={{ delay: 1.4 }}
+          >
+            Key Stats
+          </motion.h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
             {stats.map((stat) => (
-              <div key={stat.name}>
+              <motion.div
+                key={stat.name}
+                className="p-4 rounded-lg shadow-md dark:shadow-lg hover:shadow-xl transition-shadow duration-300"
+                variants={fadeInAnimation}
+                transition={{ delay: 1.6 }}
+              >
                 <dt className="text-lg font-medium text-gray-600 dark:text-gray-300">
                   {stat.name}
                 </dt>
-                <dd className="mt-3 text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-500 to-yellow-400">
+                <dd className="mt-3 text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
                   {stat.value}
                 </dd>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
