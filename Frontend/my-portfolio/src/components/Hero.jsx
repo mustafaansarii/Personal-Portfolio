@@ -62,7 +62,7 @@ export default function Hero() {
               variants={fadeInAnimation}
               transition={{ delay: 0.6 }}
             >
-              Specializing in building scalable web applications with modern technologies. Expertise in React, Spring Boot, and PostgreSQL. Passionate about crafting efficient solutions and solving complex engineering challenges.
+              A full-stack developer specializing in crafting scalable web applications using cutting-edge technologies. Proficient in React, Spring Boot, and more, I'm driven by a passion for creating efficient solutions and tackling intricate engineering problems.
             </motion.p>
           </div>
 

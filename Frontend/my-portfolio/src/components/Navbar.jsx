@@ -68,22 +68,6 @@ function Navbar() {
           </div>
         </nav>
 
-        {isVisible && (
-          <div className="container mx-auto max-w-[1000px] flex flex-col items-start mt-24 p-6 mb-4 text-black dark:text-white">
-            <div className="w-[27%] mt-4 bg-gray-300 h-1.5 rounded-full hidden md:block">
-              <div
-                className="h-full rounded-full transition-all bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>
-            <div className="flex items-center space-x-2 lg:text-sm text-xs">
-              <FaExclamationTriangle className="text-red-500" />
-              <span className="font-medium">
-                This is a full-stack app built with React, Spring Boot, and PostgreSQL.
-              </span>
-            </div>
-          </div>
-        )}
 
         <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} className="lg:hidden">
           <div className="fixed inset-0 z-50 bg-black/30" />
