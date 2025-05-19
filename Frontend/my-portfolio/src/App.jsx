@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import React, { useState, useEffect } from "react"; 
 import './App.css';
-import Hero from './components/Hero';
+import HeroSection from './components/hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -30,7 +30,7 @@ function App() {
             element={
               <>
                 <Navbar />
-                <Hero />
+                <HeroSection />
                 <div id="about">
                   <About />
                 </div>

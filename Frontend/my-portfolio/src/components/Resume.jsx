@@ -27,7 +27,7 @@ export default function Resume() {
   ];
 
   return (
-    <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-lg">
+    <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8  backdrop-blur-lg">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           Professional Journey

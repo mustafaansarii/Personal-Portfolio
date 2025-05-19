@@ -2,21 +2,32 @@ import React, { useState } from 'react';
 import { Alert, AlertTitle } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import {
+  FaReact,
+  FaJava,
+  FaPython,
+  FaDatabase,
+  FaJs,
+  FaFlask,
+  FaDocker,
+} from 'react-icons/fa';
+import { SiSpringboot, SiDjango, SiNextdotjs, SiPostgresql, SiStreamlit, SiClerk, SiOpenai, SiTypescript, SiHtml5, SiCss3, SiGit, SiNodedotjs, SiMongodb, SiMysql, SiRedis, SiGraphql } from "react-icons/si";
+
 const projectsData = [
   {
     id: 1,
     title: "CareerHub Mentorship Platform",
     description: "Connect rural students with industry mentors on CareerHub. Get personalized career guidance, network, and unlock your potential through targeted support and resources.",
-    techStack: ["React", "Spring Boot", "Django", "Microservices"],
+    techStack: ["React", "Spring Boot", "Django", "Microservices", "PostgreSQL"],
     imgSrc: "https://i.ibb.co/Cp7LhW6p/Screenshot-From-2025-05-17-12-21-16.png",
     liveLink: "https://careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii/CareerHub_app"
   },
-  { 
+  {
     id: 2,
     title: "CareerHub Job Portal",
     description: "Find your dream job on CareerHub's integrated job portal. Seamlessly connect with employers, explore opportunities, and streamline your job search for career success.",
-    techStack: ["React", "Spring Boot", "PostgreSQL"],
+    techStack: ["React", "Spring Boot", "PostgreSQL", "HTML5", "CSS3"],
     imgSrc: "https://i.ibb.co/LhHhhrDV/Screenshot-From-2025-05-16-19-18-28.png",
     liveLink: "https://jobs.careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii/CareerHub_app"
@@ -25,7 +36,7 @@ const projectsData = [
     id: 3,
     title: "MeetMock - Interview & Meeting Platform",
     description: "Ace your interviews with MeetMock! Practice in realistic mock interviews, get real-time feedback, and record sessions for comprehensive self-assessment and improved performance.",
-    techStack: ["React", "Next.js", "Stream", "Clerk"],
+    techStack: ["React", "Next.js", "Stream", "Clerk", "TypeScript", "Nodejs"],
     imgSrc: "https://i.ibb.co/GfqJQdF9/Screenshot-From-2025-05-16-19-20-47.png",
     liveLink: "https://meet.careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii"
@@ -34,7 +45,7 @@ const projectsData = [
     id: 4,
     title: "CareerMock - AI Mock Interview Platform",
     description: "Transform your interview skills with CareerMock's AI platform. Experience AI-driven simulations, instant feedback, and detailed analytics to excel in your next interview.",
-    techStack: ["React", "Next.js", "OpenAI"],
+    techStack: ["React", "Next.js", "OpenAI", "Python", "Flask"],
     imgSrc: "https://i.ibb.co/zhyZ9DSG/Screenshot-From-2025-05-17-12-19-23.png",
     liveLink: "https://interview.careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii/CareerMock"
@@ -43,12 +54,39 @@ const projectsData = [
     id: 5,
     title: "Online Text Editor & CodeShare",
     description: "Create, modify, and share code snippets instantly with SnipLink, a Flask-based online text editor. Enjoy real-time saving and collaborative features for seamless coding.",
-    techStack: ["Flask", "JavaScript", "PostgreSQL"],
+    techStack: ["Flask", "JavaScript", "PostgreSQL", "Redis", "Docker"],
     imgSrc: "https://github.com/mustafaansarii/SnipLink/blob/main/static/home.png?raw=true",
-    liveLink: "https://sniplinkapp.onrender.com/",
-    GitHubLink: "https://github.com/mustafaansarii/SnipLink"
+    liveLink: "https://snipshare-one.vercel.app/",
+    GitHubLink: "https://github.com/mustafaansarii/Snipshare"
   },
 ];
+
+const techIconMap = {
+  React: FaReact,
+  "Spring Boot": SiSpringboot,
+  Django: SiDjango,
+  Microservices: FaDocker,
+  PostgreSQL: SiPostgresql,
+  "Next.js": SiNextdotjs,
+  Stream: SiStreamlit,
+  Clerk: SiClerk,
+  OpenAI: SiOpenai,
+  Flask: FaFlask,
+  JavaScript: FaJs,
+  TypeScript: SiTypescript,
+  HTML5: SiHtml5,
+  CSS3: SiCss3,
+  Git: SiGit,
+  Nodejs: SiNodedotjs,
+  MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  Redis: SiRedis,
+  GraphQL: SiGraphql,
+  Java: FaJava,
+  Python: FaPython,
+  Database: FaDatabase,
+  Docker: FaDocker,
+};
 
 const Projects = () => {
   const [projects] = useState(projectsData);
@@ -98,17 +136,28 @@ const Projects = () => {
             </div>
 
             <div className="p-6">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.techStack.slice(0, 3).map((tech, index) => (
-                  <motion.span
-                    key={index}
-                    className="px-3 py-1 text-[0.7rem] font-bold rounded-full bg-gradient-to-r from-blue-100/80 to-purple-100/80 text-blue-800 dark:from-blue-900/40 dark:to-purple-900/40 dark:text-blue-300 backdrop-blur-sm shadow-sm hover:scale-105 transition-transform"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
+              <div className="flex flex-wrap gap-2 mb-4 relative h-10">
+                {project.techStack.slice(0, 5).map((tech, index) => {
+                  const Icon = techIconMap[tech] || (() => <span>{tech}</span>);
+                  const iconColorClass = `tech-icon-${tech.toLowerCase()}`;
+                  return (
+                    <motion.div
+                      key={index}
+                      className="absolute"
+                      style={{
+                        left: `${index * 20}px`,
+                        zIndex: index + 1,
+                        transform: `rotate(${index * 5}deg)`
+                      }}
+                      whileHover={{ scale: 1.2, rotate: 0, zIndex: 10 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="p-1.5 rounded-full bg-gradient-to-br from-white/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-900/90 backdrop-blur-sm shadow-lg border border-gray-200/50 dark:border-gray-700/50">
+                        <Icon className={`w-5 h-5 ${iconColorClass} text-${tech.toLowerCase()}-500 dark:text-${tech.toLowerCase()}-300`} />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
 
               <p className="mb-5 text-gray-600 dark:text-gray-300 line-clamp-3 leading-relaxed">
@@ -121,7 +170,7 @@ const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaGithub className="w-4 h-4" />
+                  <FaGithub className="w-3.5 h-3.5" />
                   <span>Code</span>
                 </motion.a>
                 <motion.a
@@ -130,7 +179,7 @@ const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaExternalLinkAlt className="w-4 h-4" />
+                  <FaExternalLinkAlt className="w-3.5 h-3.5" />
                   <span>Demo</span>
                 </motion.a>
               </div>
