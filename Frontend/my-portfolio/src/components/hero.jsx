@@ -56,7 +56,7 @@ export default function HeroSection() {
               variants={fadeInAnimation}
               transition={{ delay: 0.6 }}
             >
-              As a problem solver and full-stack developer, I specialize in building robust web applications. My expertise lies in crafting efficient solutions using technologies like Spring Boot, React, and more, always striving for clean, maintainable, and high-performance code.
+              As a problem solver and full-stack developer, I'm passionate about building robust web applications. I leverage technologies like Spring Boot and React to craft efficient, clean, and high-performance solutions. Beyond development, I actively engage in competitive programming, holding ratings of <strong className="underline" style={{textDecorationColor: 'pink'}}>1707 on CodeChef</strong>, <strong className="underline" style={{textDecorationColor: 'pink'}}>1835 on LeetCode</strong>, and <strong className="underline" style={{textDecorationColor: 'pink'}}>1679 on GeeksforGeeks</strong>.
             </motion.p>
           </div>
           <motion.div
