@@ -35,7 +35,7 @@ function Skills() {
     <div className="text-gray-800 dark:text-white py-8 md:py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-300">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 dark:from-yellow-300 dark:to-pink-400">
             Technical Prowess
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -46,8 +46,8 @@ function Skills() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
           {/* Backend Section */}
           <div className="group transform transition-all duration-300 hover:-translate-y-2">
-            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-green-500 dark:hover:border-green-400">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-green-600 dark:text-green-400">Backend Engineering</h3>
+            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-400">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-yellow-600 dark:text-yellow-400">Backend Engineering</h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
                 Designing and implementing scalable, efficient, and reliable server-side solutions.
               </p>
@@ -60,7 +60,6 @@ function Skills() {
                       alt={skill.name}
                     />
                     <span className="text-xs sm:text-sm mt-1 sm:mt-2 text-center text-gray-500 dark:text-gray-400">{skill.name}</span>
-                    {/* <p className="text-xxs text-center text-gray-500 dark:text-gray-400">{skill.description}</p> */}
                   </div>
                 ))}
               </div>
@@ -69,8 +68,8 @@ function Skills() {
 
           {/* Frontend Section */}
           <div className="group transform transition-all duration-300 hover:-translate-y-2">
-            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-600 dark:text-blue-400">Frontend Development</h3>
+            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-pink-500 dark:hover:border-pink-400">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-pink-600 dark:text-pink-400">Frontend Development</h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
                 Creating engaging and responsive user interfaces for web and mobile platforms.
               </p>
@@ -83,7 +82,6 @@ function Skills() {
                       alt={skill.name}
                     />
                     <span className="text-xs sm:text-sm mt-1 sm:mt-2 text-center text-gray-500 dark:text-gray-400">{skill.name}</span>
-                    {/* <p className="text-xxs text-center text-gray-500 dark:text-gray-400">{skill.description}</p> */}
                   </div>
                 ))}
               </div>
@@ -92,8 +90,8 @@ function Skills() {
 
           {/* Others Section */}
           <div className="group transform transition-all duration-300 hover:-translate-y-2">
-            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-400">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-purple-600 dark:text-purple-400">Tools & Technologies</h3>
+            <div className="p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-400">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-yellow-600 dark:text-yellow-400">Tools & Technologies</h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
                 Utilizing a diverse range of tools and technologies to optimize development workflows.
               </p>
@@ -106,7 +104,6 @@ function Skills() {
                       alt={skill.name}
                     />
                     <span className="text-xs sm:text-sm mt-1 sm:mt-2 text-center text-gray-500 dark:text-gray-400">{skill.name}</span>
-                    {/* <p className="text-xxs text-center text-gray-500 dark:text-gray-400">{skill.description}</p> */}
                   </div>
                 ))}
               </div>

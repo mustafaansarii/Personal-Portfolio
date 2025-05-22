@@ -1,25 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import { FaBars, FaTimes, FaExclamationTriangle } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [progress, setProgress] = useState(100);
 
   useEffect(() => {
     if (!isVisible) return;
 
     const timer = setTimeout(() => setIsVisible(false), 3000);
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => Math.max(prev - (100 / 30), 0));
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(progressInterval);
-    };
+    return () => clearTimeout(timer);
   }, [isVisible]);
 
   const navigation = [
@@ -37,7 +29,7 @@ function Navbar() {
           <div className="container mx-auto max-w-[1000px] flex items-center justify-between h-full">
             <div className="flex lg:flex-1">
               <a href="#" className="-m-1.5 p-1.5 cursor-pointer">
-                <h1 className="text-xl lg:text-2xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
+                <h1 className="text-xl lg:text-2xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text">
                   &lt;Mustafa Ansari/&gt;
                 </h1>
               </a>
@@ -59,7 +51,7 @@ function Navbar() {
                   to={item.href}
                   smooth={true}
                   duration={500}
-                  className="px-3 py-2 text-sm xl:text-base font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 hover:underline font-montserrat"
+                  className="px-3 py-2 text-sm xl:text-base font-semibold transition-all duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r from-yellow-400 to-pink-500 hover:after:w-full after:transition-all after:duration-300 font-montserrat"
                 >
                   {item.name}
                 </Link>
@@ -67,7 +59,6 @@ function Navbar() {
             </div>
           </div>
         </nav>
-
 
         <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} className="lg:hidden">
           <div className="fixed inset-0 z-50 bg-black/30" />
@@ -96,7 +87,7 @@ function Navbar() {
                       to={item.href}
                       smooth={true}
                       duration={500}
-                      className="-mx-3 block rounded-lg px-3 py-3 text-base font-semibold text-black dark:text-white hover:border hover:border-black dark:hover:border-white cursor-pointer font-montserrat"
+                      className="-mx-3 block rounded-lg px-3 py-3 text-base font-semibold text-black dark:text-white hover:bg-gradient-to-r from-yellow-400 to-pink-500 hover:text-white cursor-pointer font-montserrat transition-all duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}

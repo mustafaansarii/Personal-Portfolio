@@ -36,7 +36,7 @@ export default function HeroSection() {
         >
             <div className="space-y-4 text-left">
                 <motion.h1
-                className="text-4xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-serif"
+                className="text-4xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text text-transparent font-serif"
                 variants={fadeInAnimation}
                 transition={{ delay: 0.2 }}
                 >
@@ -89,8 +89,8 @@ export default function HeroSection() {
               to="projects"
               smooth={true}
               duration={500}
-              className="w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-md hover:shadow-md transition-all duration-300 text-sm flex items-center justify-center"
-              style={{backgroundColor: '#6366F1'}}
+              className="w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-yellow-400 to-pink-600 text-white font-semibold rounded-md hover:shadow-md transition-all duration-300 text-sm flex items-center justify-center"
+              style={{backgroundColor: '#EC4899'}}
               whileHover={buttonHover}
             >
               View Projects <FaArrowRight className="ml-2" />
@@ -99,7 +99,7 @@ export default function HeroSection() {
               href='https://drive.google.com/file/d/1PGsMMkw2oKhEgEsuql9uLgkpNiQHO8gg/view'
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-4 py-2 border-2 border-blue-500 text-blue-500 font-semibold rounded-md hover:bg-blue-500 hover:text-white transition-all duration-300 text-sm flex items-center justify-center"
+              className="w-full sm:w-auto px-4 py-2 border-2 border-pink-500 text-pink-500 font-semibold rounded-md hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm flex items-center justify-center"
               whileHover={buttonHover}
             >
               View Resume <FaArrowRight className="ml-2" />

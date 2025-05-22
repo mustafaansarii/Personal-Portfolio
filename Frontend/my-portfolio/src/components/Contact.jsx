@@ -98,7 +98,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full md:w-1/2 py-3 mt-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center"
+            className="w-full md:w-1/2 py-3 mt-6 bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:from-yellow-500 hover:to-pink-600 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center"
           >
             {isLoading ? (
               <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

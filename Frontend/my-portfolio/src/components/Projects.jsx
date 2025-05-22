@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Alert, AlertTitle } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
@@ -30,7 +30,7 @@ const projectsData = [
     techStack: ["React", "Spring Boot", "PostgreSQL", "HTML5", "CSS3"],
     imgSrc: "https://i.ibb.co/LhHhhrDV/Screenshot-From-2025-05-16-19-18-28.png",
     liveLink: "https://jobs.careerhubs.info/",
-    GitHubLink: "https://github.com/mustafaansarii/CareerHub_app"
+    GitHubLink: "https://github.com/mustafaansarii/CearHub_app"
   },
   {
     id: 3,
@@ -93,7 +93,7 @@ const Projects = () => {
 
   if (!projects.length) return (
     <div className="max-w-[1200px] mx-auto p-4">
-      <Alert severity="info" className="dark:bg-blue-900/20">
+      <Alert severity="info" className="dark:bg-yellow-900/20">
         <AlertTitle>No Projects Found</AlertTitle>
         There are currently no projects to display.
       </Alert>
@@ -102,7 +102,7 @@ const Projects = () => {
 
   return (
     <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 backdrop-blur-lg rounded-3xl bg-white/10 dark:bg-black/10">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 dark:from-blue-400 dark:to-purple-300 animate-text">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500 dark:from-yellow-400 dark:to-pink-300 animate-text">
         My Projects
       </h2>
 
@@ -110,7 +110,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            className="group relative overflow-hidden rounded-2xl border border-gray-200/30 dark:border-gray-700/50 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-white/80 to-purple-50/50 dark:from-gray-800/80 dark:to-purple-900/20 backdrop-blur-sm hover:backdrop-blur-md"
+            className="group relative overflow-hidden rounded-2xl border border-gray-200/30 dark:border-gray-700/50 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-white/80 to-pink-50/50 dark:from-gray-800/80 dark:to-pink-900/20 backdrop-blur-sm hover:backdrop-blur-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
@@ -129,7 +129,7 @@ const Projects = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <h3 className="text-xl font-bold text-white">
                     {project.title}
-                    <span className="ml-2 text-sm text-blue-300 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    <span className="ml-2 text-sm text-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </h3>
                 </div>
               </a>
