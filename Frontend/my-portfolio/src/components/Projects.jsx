@@ -55,8 +55,8 @@ const projectsData = [
     title: "SnipShare - Online Text Editor & CodeShare",
     description: "Create, modify, and share code snippets instantly with SnipShare, a Flask-based online text editor. Enjoy real-time saving and collaborative features for seamless coding.",
     techStack: ["Flask", "JavaScript", "PostgreSQL", "Redis", "Docker"],
-    imgSrc: "https://i.ibb.co/Mxtc869t/Screenshot-From-2025-05-20-11-08-13.png",
-    liveLink: "https://snipshare-one.vercel.app/",
+    imgSrc: "https://i.ibb.co/RTfB6wHs/Screenshot-From-2025-06-05-21-02-06.png",
+    liveLink: "https://code.careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii/Snipshare"
   },
 ];
