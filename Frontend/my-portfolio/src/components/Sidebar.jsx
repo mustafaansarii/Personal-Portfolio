@@ -1,6 +1,6 @@
 import { FaHome, FaUser, FaBriefcase, FaCode, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -21,17 +21,23 @@ const Sidebar = () => {
     >
       <div className="flex gap-6 md:flex-col md:gap-5">
         {icons.map((item, index) => (
-          <motion.a
+          <motion.div
             key={index}
-            href={item.link}
-            className={`text-2xl text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors
-                       md:text-xl md:hover:scale-110 ${location.pathname === item.link ? 'text-pink-500 dark:text-pink-400' : ''}`}
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 400 }}
           >
-            {item.icon}
-          </motion.a>
+            <Link
+              to={item.link}
+              className={`text-2xl text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors
+                         md:text-xl md:hover:scale-110 ${location.pathname === item.link ? 'text-pink-500 dark:text-pink-400' : ''}`}
+            >
+              <motion.div
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: 'spring', stiffness: 400 }}
+              >
+                {item.icon}
+              </motion.div>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </motion.div>
