@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const skills = {
   frontend: [
@@ -32,10 +33,12 @@ const skills = {
 
 function Skills() {
   return (
-    <div className="text-gray-800 dark:text-white py-8 md:py-12 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <>
+      <Navbar />
+    <div className="text-gray-800 dark:text-white py-8 md:py-12 px-4 sm:px-6 lg:px-8 mt-10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500 dark:from-yellow-300 dark:to-pink-400">
+        <div className="text-center space-y-1 md:space-y-2 mb-4 md:mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 bg-gradient-to-r from-yellow-300 via-yellow-400 to-pink-400 bg-clip-text text-transparent">
             Technical Prowess
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -112,6 +115,7 @@ function Skills() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,3 +1,5 @@
+import Navbar from './Navbar';
+
 export default function Resume() {
   const timelineData = [
     {
@@ -27,40 +29,42 @@ export default function Resume() {
   ];
 
   return (
-    <section className="py-12 md:py-24 px-4 sm:px-6 lg:px-8 backdrop-blur-lg">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 bg-gradient-to-r from-yellow-300 via-yellow-400 to-pink-400 bg-clip-text text-transparent">
+    <>
+      <Navbar />
+    <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-lg mt-10">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 bg-gradient-to-r from-yellow-300 via-yellow-400 to-pink-400 bg-clip-text text-transparent">
           Professional Journey
         </h2>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 w-[2px] md:w-1 h-full bg-gradient-to-b from-yellow-400/20 via-pink-500/50 to-pink-600/20 dark:from-yellow-500/30 dark:via-pink-600/50 dark:to-pink-700/30 transform -translate-x-1/2" />
+          <div className="absolute left-1/2 w-[2px] h-full bg-gradient-to-b from-yellow-400/20 via-pink-500/50 to-pink-600/20 dark:from-yellow-500/30 dark:via-pink-600/50 dark:to-pink-700/30 transform -translate-x-1/2" />
 
           {timelineData.map((item, index) => (
-            <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center md:items-stretch justify-center md:justify-between mb-8 md:mb-16 gap-4 md:gap-8`}>
+            <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center md:items-stretch justify-center md:justify-between mb-6 md:mb-8 gap-3 md:gap-6`}>
               {/* Date */}
               <div className="w-full md:w-[45%] flex items-center justify-center">
-                <div className={`text-xl md:text-2xl font-bold text-gray-700 dark:text-gray-200 text-center ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
+                <div className={`text-lg md:text-xl font-bold text-gray-700 dark:text-gray-200 text-center ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
                   {item.period}
                 </div>
               </div>
 
               {/* Timeline Dot */}
-              <div className="relative w-12 md:w-16 flex flex-col items-center justify-center">
-                <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 border-4 border-white dark:border-gray-900 shadow-xl transform group-hover:scale-125 transition-transform" />
+              <div className="relative w-8 md:w-10 flex flex-col items-center justify-center">
+                <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 border-2 border-white dark:border-gray-900 shadow-md transform group-hover:scale-110 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-b from-yellow-400/20 to-transparent -z-10 animate-pulse" />
               </div>
               {/* Content Card */}
-              <div className="w-full md:w-[45%] p-4 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200/80 dark:border-gray-600/50 bg-white/20 dark:bg-gray-800/20 backdrop-blur-lg hover:shadow-2xl transition-all duration-300 group">
-                <div className="space-y-2 md:space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 group-hover:text-yellow-500 dark:group-hover:text-yellow-400 transition-colors">
+              <div className="w-full md:w-[45%] p-3 md:p-6 rounded-xl md:rounded-2xl border border-gray-200/80 dark:border-gray-600/50 bg-white/20 dark:bg-gray-800/20 backdrop-blur-lg hover:shadow-lg transition-all duration-300 group">
+                <div className="space-y-1 md:space-y-2">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-gray-100 group-hover:text-yellow-500 dark:group-hover:text-yellow-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-base md:text-lg font-semibold bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text text-transparent">
+                  <p className="text-sm md:text-base font-semibold bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text text-transparent">
                     {item.institution}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -70,5 +74,6 @@ export default function Resume() {
         </div>
       </div>
     </section>
+    </>
   );
 }

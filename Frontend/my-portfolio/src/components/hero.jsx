@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
+import Navbar from "./Navbar";
 
 const fadeInAnimation = {
   initial: { opacity: 0, y: 20 },
@@ -26,6 +27,8 @@ export default function HeroSection() {
     { link: "https://www.codechef.com/users/mustafaansari", icon: <img src="https://codolio.com/icons/codechef_dark.png" alt="CodeChef" className="w-6 h-6 md:w-7 md:h-7" />, alt: "CodeChef" }
   ];
   return (
+    <>
+      <Navbar />
     <section className="min-h-screen flex items-center justify-start font-sans mt-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" style={{ maxWidth: '1200px' }}>
         <motion.div
@@ -108,5 +111,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

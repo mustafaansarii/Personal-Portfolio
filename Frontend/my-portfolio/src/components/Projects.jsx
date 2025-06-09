@@ -12,6 +12,7 @@ import {
   FaDocker,
 } from 'react-icons/fa';
 import { SiSpringboot, SiDjango, SiNextdotjs, SiPostgresql, SiStreamlit, SiClerk, SiOpenai, SiTypescript, SiHtml5, SiCss3, SiGit, SiNodedotjs, SiMongodb, SiMysql, SiRedis, SiGraphql } from "react-icons/si";
+import Navbar from './Navbar';
 
 const projectsData = [
   {
@@ -52,13 +53,22 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "SnipShare - Online Text Editor & CodeShare",
-    description: "Create, modify, and share code snippets instantly with SnipShare, a Flask-based online text editor. Enjoy real-time saving and collaborative features for seamless coding.",
+    title: "CodeShare - Online Text Editor & Compiler",
+    description: "Create, modify, compile and share code snippets instantly with CodeShare, a Flask-based online text editor. Enjoy real-time saving and collaborative features for seamless coding.",
     techStack: ["Flask", "JavaScript", "PostgreSQL", "Redis", "Docker"],
     imgSrc: "https://i.ibb.co/svnRGSs1/Screenshot-From-2025-06-05-21-04-57.png",
     liveLink: "https://code.careerhubs.info/",
     GitHubLink: "https://github.com/mustafaansarii/Snipshare"
   },
+  {
+    id: 6,
+    title: "HealthSync - Patient Management System",
+    description: "A modern patient management platform featuring real-time data synchronization, secure patient records, and integrated billing. Built with Spring Boot, gRPC for microservices communication, and Kafka for event-driven architecture.",
+    techStack: ["Spring Boot", "gRPC", "Kafka", "PostgreSQL", "Java", "JWT", "Docker"],
+    imgSrc: "https://i.ibb.co/67ggfKxr/Health-Sync.png",
+    liveLink: "https://github.com/mustafaansarii/",
+    GitHubLink: "https://github.com/mustafaansarii/"
+  }
 ];
 
 const techIconMap = {
@@ -101,11 +111,18 @@ const Projects = () => {
   );
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 backdrop-blur-lg rounded-3xl bg-white/10 dark:bg-black/10">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500 dark:from-yellow-400 dark:to-pink-300 animate-text">
+    <>
+      <Navbar />
+    <section className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 backdrop-blur-lg rounded-3xl bg-white/10 dark:bg-black/10">
+    <div className="text-center space-y-1 mb-2 md:mb-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 bg-gradient-to-r from-yellow-300 via-yellow-400 to-pink-400 bg-clip-text text-transparent">
         My Projects
       </h2>
-
+      <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Here are some of the projects I&apos;ve worked on.
+      </p>
+    </div>
+    
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
         {projects.map((project, index) => (
           <motion.div
@@ -188,6 +205,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 
