@@ -1,4 +1,4 @@
-import { FaHome, FaUser, FaBriefcase, FaCode, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaUser, FaBriefcase, FaCode, FaEnvelope, FaFile } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ const Sidebar = () => {
   const icons = [
     { icon: <FaHome />, link: '/' },
     { icon: <FaUser />, link: '/about' },
+    { icon: <FaFile />, link: '/resume' },
     { icon: <FaBriefcase />, link: '/projects' },
     { icon: <FaCode />, link: '/skills' },
     { icon: <FaEnvelope />, link: '/contact' }
