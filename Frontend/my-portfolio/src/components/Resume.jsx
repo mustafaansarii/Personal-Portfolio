@@ -31,7 +31,7 @@ export default function Resume() {
   return (
     <>
       <Navbar />
-    <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-lg mt-10">
+    <section id="resume" className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 backdrop-blur-lg mt-10">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-gray-700 via-sky-500 to-blue-900 dark:from-white dark:via-sky-500 dark:to-blue-900 bg-clip-text text-transparent">
           Professional Journey

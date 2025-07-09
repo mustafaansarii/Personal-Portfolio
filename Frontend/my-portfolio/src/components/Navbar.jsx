@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
   const navigation = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Resume", href: "#resume" },
     { name: "Skills", href: "#skills" },
@@ -40,15 +37,20 @@ function Navbar() {
             </div>
             <div className="hidden lg:flex lg:gap-x-5 xl:gap-x-6 cursor-pointer h-full items-center">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
-                  className={`px-2 py-1 text-sm font-semibold transition-all duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r from-blue-600 to-blue-600 hover:after:w-full after:transition-all after:duration-300 font-montserrat ${
-                    location.pathname === item.href ? "after:w-full" : ""
-                  }`}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className={`px-2 py-1 text-sm font-semibold transition-all duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r from-blue-600 to-blue-600 hover:after:w-full after:transition-all after:duration-300 font-montserrat`}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -76,16 +78,21 @@ function Navbar() {
               <div className="-my-5 divide-y divide-gray-500/10 dark:divide-gray-700/10">
                 <div className="space-y-2 py-5">
                   {navigation.map((item) => (
-                    <Link
+                    <a
                       key={item.name}
-                      to={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-black dark:text-white hover:bg-gradient-to-r from-blue-600 to-blue-600 hover:text-white cursor-pointer font-montserrat transition-all duration-300 ${
-                        location.pathname === item.href ? "bg-gradient-to-r from-blue-600 to-blue-600 text-white" : ""
-                      }`}
-                      onClick={() => setMobileMenuOpen(false)}
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const element = document.querySelector(item.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-black dark:text-white hover:bg-gradient-to-r from-blue-600 to-blue-600 hover:text-white cursor-pointer font-montserrat transition-all duration-300`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

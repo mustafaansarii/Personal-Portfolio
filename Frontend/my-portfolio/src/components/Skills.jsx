@@ -36,7 +36,7 @@ function Skills() {
   return (
     <>
       <Navbar />
-    <div className="text-gray-800 dark:text-white py-8 md:py-12 px-4 sm:px-6 lg:px-8 mt-10">
+    <div id="skills" className="text-gray-800 dark:text-white py-8 md:py-12 px-4 sm:px-6 lg:px-8 mt-10">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-1 md:space-y-2 mb-4 md:mb-6">
         <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-400 via-sky-500 to-blue-600 dark:from-gray-100 dark:via-sky-500 dark:to-blue-600 bg-clip-text text-transparent">
