@@ -9,7 +9,7 @@ export default function Resume() {
       description: "Led development of real-time stock analytics platform using Django and React. Optimized WebSocket implementation achieving 30% performance boost. Integrated ML models for predictive analytics and implemented JWT authentication.",
     },
     {
-      period: "2021 - Present",
+      period: "2022 - Present",
       title: "B.Tech in Computer Science",
       institution: "Maharishi Markandeshwar University, Mullana-Ambala",
       description: "Pursuing degree with 8.9 CGPA. Developed 15+ projects including real-time sentiment analysis tool and full-stack e-commerce platform. Coursework includes DSA, AI/ML, and Cloud Computing.",
