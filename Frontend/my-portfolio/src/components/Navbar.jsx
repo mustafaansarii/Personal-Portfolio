@@ -9,11 +9,11 @@ function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Resume", href: "/resume" },
-    { name: "Skills", href: "/skills" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "#about" },
+    { name: "Resume", href: "#resume" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -23,7 +23,7 @@ function Navbar() {
           <div className="container mx-auto max-w-[1000px] flex items-center justify-between h-full">
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5 cursor-pointer">
-                <h1 className="text-lg lg:text-xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text">
+                <h1 className="text-lg lg:text-xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-black via-sky-500 to-blue-600 bg-clip-text dark:from-white dark:via-sky-500 dark:to-blue-600">
                   &lt;Mustafa Ansari/&gt;
                 </h1>
               </a>
@@ -43,7 +43,7 @@ function Navbar() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-2 py-1 text-sm font-semibold transition-all duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r from-yellow-400 to-pink-500 hover:after:w-full after:transition-all after:duration-300 font-montserrat ${
+                  className={`px-2 py-1 text-sm font-semibold transition-all duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r from-blue-600 to-blue-600 hover:after:w-full after:transition-all after:duration-300 font-montserrat ${
                     location.pathname === item.href ? "after:w-full" : ""
                   }`}
                 >
@@ -59,7 +59,7 @@ function Navbar() {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-5 py-5 sm:max-w-sm bg-gray-50 dark:bg-gray-900">
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5 cursor-pointer">
-                <h1 className="text-xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text">
+                <h1 className="text-xl font-handwriting font-semibold text-transparent bg-gradient-to-r from-gray-400 via-sky-500 to-blue-600 bg-clip-text dark:from-white dark:via-sky-500 dark:to-blue-600">
                   &lt;Mustafa Ansari /&gt;
                 </h1>
               </a>
@@ -79,8 +79,8 @@ function Navbar() {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-black dark:text-white hover:bg-gradient-to-r from-yellow-400 to-pink-500 hover:text-white cursor-pointer font-montserrat transition-all duration-300 ${
-                        location.pathname === item.href ? "bg-gradient-to-r from-yellow-400 to-pink-500 text-white" : ""
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-sm font-semibold text-black dark:text-white hover:bg-gradient-to-r from-blue-600 to-blue-600 hover:text-white cursor-pointer font-montserrat transition-all duration-300 ${
+                        location.pathname === item.href ? "bg-gradient-to-r from-blue-600 to-blue-600 text-white" : ""
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >

@@ -1,116 +1,87 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa";
-import Navbar from "./Navbar";
+'use client'
+import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+const Hero = () => {
+  const variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  }
 
-const fadeInAnimation = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: "easeInOut" },
-};
-
-const buttonHover = {
-  scale: 1.1,
-  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
-};
-
-export default function HeroSection() {
   const socialIcons = [
-    { link: "https://github.com/mustafaansarii", icon: <FaGithub />, alt: "GitHub" },
-    { link: "https://www.linkedin.com/in/mustafaansaari/", icon: <FaLinkedin />, alt: "LinkedIn" },
-    { link: "mailto:mustafaa.edu@gmail.com", icon: <FaEnvelope />, alt: "Email" },
-    { link: "https://leetcode.com/u/mustafaansari/", icon: <img src="https://codolio.com/icons/leetcode_dark.png" alt="LeetCode" className="w-6 h-6 md:w-7 md:h-7" />, alt: "LeetCode" },
-    { link: "https://codeforces.com/profile/mustafaansari", icon: <img src="https://cdn.iconscout.com/icon/free/png-512/free-code-forces-3521352-2944796.png?f=webp&w=256" alt="Codeforces" className="w-6 h-6 md:w-7 md:h-7" />, alt: "Codeforces" },
-    { link: "https://www.geeksforgeeks.org/user/mustafaansarii", icon: <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" className="w-6 h-6 md:w-7 md:h-7" />, alt: "GeeksforGeeks" },
-    { link: "https://www.codechef.com/users/mustafaansari", icon: <img src="https://codolio.com/icons/codechef_dark.png" alt="CodeChef" className="w-6 h-6 md:w-7 md:h-7" />, alt: "CodeChef" }
+    { link: "https://github.com/mustafaansarii", icon: <FaGithub size={24} />, alt: "GitHub" },
+    { link: "https://www.linkedin.com/in/mustafaansaari/", icon: <FaLinkedin size={24} />, alt: "LinkedIn" },
+    { link: "mailto:mustafaa.edu@gmail.com", icon: <FaEnvelope size={24} />, alt: "Email" },
+    { link: "https://leetcode.com/u/mustafaansari/", icon: < img src="https://codolio.com/icons/leetcode_dark.png" alt="LeetCode" width={28} height={28} className="w-6 h-6 md:w-7 md:h-7 dark:text-white" />, alt: "LeetCode" },
+    { link: "https://codeforces.com/profile/mustafaansari", icon: <img src="https://cdn.iconscout.com/icon/free/png-512/free-code-forces-3521352-2944796.png?f=webp&w=256" alt="Codeforces" width={28} height={28} className="w-6 h-6 md:w-7 md:h-7 dark:text-white" />, alt: "Codeforces" },
+    { link: "https://www.geeksforgeeks.org/user/mustafaansarii", icon: <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" width={28} height={28} className="w-6 h-6 md:w-7 md:h-7 dark:text-white" />, alt: "GeeksforGeeks" },
+    { link: "https://www.codechef.com/users/mustafaansari", icon: <img src="https://codolio.com/icons/codechef_dark.png" alt="CodeChef" width={28} height={28} className="w-6 h-6 md:w-7 md:h-7 dark:text-white" />, alt: "CodeChef" }
   ];
+
   return (
     <>
-      <Navbar />
-    <section className="min-h-screen flex items-center justify-start font-sans mt-10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" style={{ maxWidth: '1200px' }}>
-        <motion.div
-          className="space-y-8"
-          variants={fadeInAnimation}
-          initial="initial"
-          animate="animate"
-        >
-            <div className="space-y-4 text-left">
-                <motion.h1
-                className="text-4xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text text-transparent font-serif"
-                variants={fadeInAnimation}
-                transition={{ delay: 0.2 }}
-                >
-                Hi, I&apos;m 
-                <br />
-                Mustafa Ansari
-                </motion.h1>
-            <motion.h2
-              className="text-xl md:text-2xl font-medium text-gray-900 dark:text-gray-300 font-serif"
-              variants={fadeInAnimation}
-              transition={{ delay: 0.4 }}
-            >
-              Competitive Programmer & Aspiring Software Engineer
-            </motion.h2>
-            <motion.p
-              className="text-base text-gray-900 dark:text-gray-300 max-w-2xl leading-relaxed"
-              variants={fadeInAnimation}
-              transition={{ delay: 0.6 }}
-            >
-              As a problem solver and full-stack developer, I'm passionate about building robust web applications. I leverage technologies like Spring Boot and React to craft efficient, clean, and high-performance solutions. Beyond development, I actively engage in competitive programming, holding ratings of <strong className="underline" style={{textDecorationColor: 'pink'}}>1707 on CodeChef</strong>, <strong className="underline" style={{textDecorationColor: 'pink'}}>1835 on LeetCode</strong>, and <strong className="underline" style={{textDecorationColor: 'pink'}}>1679 on GeeksforGeeks</strong>.
-            </motion.p>
-          </div>
-          <motion.div
-            className="flex justify-start gap-5 pt-4"
-            variants={fadeInAnimation}
-            transition={{ delay: 1.0 }}
-          >
-            {socialIcons.map((social, index) => (
+    <section id='hero' className="h-screen flex items-center justify-center">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        transition={{ duration: 0.5 }}
+        className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center lg:px-12"
+      >
+        <div className="mx-auto max-w-2xl text-left">
+          <h1 className="text-5xl font-extrabold font-serif leading-tight from-gray-800 to-blue-500 dark:from-white dark:to-blue-500 bg-gradient-to-r bg-clip-text text-transparent sm:text-6xl">
+            Hi, I&lsquo;m <br /> Mustafa Ansari
+          </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-2xl sm:text-2xl dark:text-white font-serif">
+            Full Stack Developer & Aspiring Software Engineer
+          </p>
+          <p className="mt-4 max-w-xl mx-auto text-lg sm:text-xl dark:text-white font-sans">
+            I build scalable, responsive, and high-performance web applications using modern technologies.
+            My focus is on writing clean, maintainable code and delivering seamless user experiences.
+          </p>
+          <div className="mt-8 flex justify-start">
+            {socialIcons.map((icon, index) => (
               <motion.a
                 key={index}
-                href={social.link}
+                href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 -mt-5 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 w-7 h-7 flex items-center justify-center"
-                whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.4, type: "spring", stiffness: 250 } }}
+                initial="hidden"
+                animate="visible"
+                variants={variants}
+                transition={{ duration: 0.5 }}
+                className="mr-4"
               >
-                {React.cloneElement(social.icon, {
-                  className: "w-6 h-6 md:w-7 md:h-7",
-                })}
+                <span className="w-6 h-6 md:w-7 md:h-7">{icon.icon}</span>
               </motion.a>
             ))}
-          </motion.div>
-
-          <motion.div
-            className="flex flex-col sm:flex-row justify-start gap-4 w-full px-4"
-            variants={fadeInAnimation}
-            transition={{ delay: 0.8 }}
-          >
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              className="w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-yellow-400 to-pink-600 text-white font-semibold rounded-md hover:shadow-md transition-all duration-300 text-sm flex items-center justify-center"
-              style={{backgroundColor: '#EC4899'}}
-              whileHover={buttonHover}
+          </div>
+          <div className="mt-8 flex justify-start">
+            <motion.button
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              transition={{ duration: 0.5 }}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full dark:bg-blue-600 dark:text-white"
+              onClick={() => window.location.href = '#projects'}
             >
-              View Projects <FaArrowRight className="ml-2" />
-            </Link>
-            <motion.a
-              href='https://drive.google.com/file/d/1PGsMMkw2oKhEgEsuql9uLgkpNiQHO8gg/view'
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-4 py-2 border-2 border-pink-500 text-pink-500 font-semibold rounded-md hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm flex items-center justify-center"
-              whileHover={buttonHover}
+              View My Work
+            </motion.button>
+            <motion.button
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              transition={{ duration: 0.5 }}
+              className="border text-gray-800 font-bold py-2 px-4 rounded-full ml-4 cursor-pointer dark:bg-gray-700 dark:text-white"
+              onClick={() => window.location.href = 'https://drive.google.com/file/d/1PGsMMkw2oKhEgEsuql9uLgkpNiQHO8gg/view'}
             >
-              View Resume <FaArrowRight className="ml-2" />
-            </motion.a>
-          </motion.div>
-        </motion.div>
-      </div>
+              View Resume
+            </motion.button>
+          </div>
+        </div>
+      </motion.div>
     </section>
     </>
   );
 }
+
+export default Hero

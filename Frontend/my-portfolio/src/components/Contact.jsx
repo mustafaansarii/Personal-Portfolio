@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import config from '../config';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './Navbar';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
@@ -15,6 +12,11 @@ const Contact = () => {
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState({
+    show: false,
+    message: '',
+    timeoutId: null
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,14 +33,32 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        toast.success('Message sent!');
+        setSuccessMessage({
+          show: true,
+          message: 'Message sent!',
+          timeoutId: setTimeout(() => {
+            setSuccessMessage({ show: false, message: '', timeoutId: null });
+          }, 3000)
+        });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        toast.error('Failed to send. Please try again.');
+        setSuccessMessage({
+          show: true,
+          message: 'Failed to send. Please try again.',
+          timeoutId: setTimeout(() => {
+            setSuccessMessage({ show: false, message: '', timeoutId: null });
+          }, 3000)
+        });
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.error('Failed to send. Please try again.');
+      setSuccessMessage({
+        show: true,
+        message: 'Failed to send. Please try again.',
+        timeoutId: setTimeout(() => {
+          setSuccessMessage({ show: false, message: '', timeoutId: null });
+        }, 3000)
+      });
     } finally {
       setIsLoading(false);
     }
@@ -46,22 +66,23 @@ const Contact = () => {
 
   return (
     <>
-      <Navbar />
-      <section className="relative py-16 bg-white/10 dark:bg-black/10 backdrop-blur-lg min-h-screen">
+      <section id='contact' className="relative py-16 bg-white/10 dark:bg-black/10 backdrop-blur-lg min-h-screen">
         <motion.div
           className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <ToastContainer />
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-yellow-400 via-pink-500 to-pink-600 bg-clip-text text-transparent">
+
+          <div className="mb-8">
+          <div className="text-left">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-400 via-gray-500 to-sky-600 dark:from-gray-100  dark:to-blue-600 bg-clip-text text-transparent">
               Contact Me
             </h2>
             <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
               Feel free to reach out for collaborations or just a friendly hello!
             </p>
+          </div>
           </div>
 
           <div className="flex justify-center gap-6 mb-8">
@@ -81,7 +102,7 @@ const Contact = () => {
             ))}
           </div>
 
-          <div className="rounded-2xl shadow-lg p-6 md:p-8 border border-gray-200 dark:border-gray-700">
+          <div className="p-6 md:p-8 border border-gray-200 dark:border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -94,7 +115,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-md p-3 text-gray-900 dark:text-white"
+                  className="shadow-sm focus:ring-sky-500 focus:border-sky-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800  p-3 text-gray-900 dark:text-white"
                   placeholder="Your Name"
                 />
               </div>
@@ -110,7 +131,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-md p-3 text-gray-900 dark:text-white"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800  p-3 text-gray-900 dark:text-white"
                   placeholder="Your Email"
                 />
               </div>
@@ -125,17 +146,31 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-md p-3 text-gray-900 dark:text-white"
+                  className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800   p-3 text-gray-900 dark:text-white"
                   placeholder="Your Message"
                   required
                 />
               </div>
 
               <div>
+                {successMessage.show && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className={`text-sm rounded-md px-4 py-2 mb-2 ${
+                      successMessage.message.includes('sent')
+                        ? 'bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300'
+                        : 'bg-red-50 dark:bg-red-900 text-red-700 dark:text-red-300'
+                    }`}
+                  >
+                    {successMessage.message}
+                  </motion.div>
+                )}
                 <motion.button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-yellow-400 to-pink-500 hover:from-pink-500 hover:to-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                  className="flex items-center justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 dark:bg-gray-200 dark:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-gray-800 transition-all duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -145,7 +180,7 @@ const Contact = () => {
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                   ) : null}
-                  {isLoading ? 'Sending...' : 'Send Message'}
+                  <span className="ml-2">{isLoading ? 'Sending...' : 'Send Message'}</span>
                 </motion.button>
               </div>
             </form>
