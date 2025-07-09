@@ -131,7 +131,7 @@ const Projects = () => {
                 </a>
               </div>
               <div className="p-4">
-                <div className="flex flex-wrap gap-2 mb-3 relative h-10 -mt-6">
+                <div className="flex flex-wrap gap-2 mb-3 relative h-10 mt-4 md:-mt-4">
                   {project.techStack.slice(0, 3).map((tech, index) => {
                     const iconUrl = techStack[tech];
                     

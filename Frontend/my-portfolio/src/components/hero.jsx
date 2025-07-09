@@ -28,7 +28,7 @@ const Hero = () => {
         className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center lg:px-12"
       >
         <div className="mx-auto max-w-2xl text-left">
-          <h1 className="text-5xl font-extrabold font-serif leading-tight from-gray-800 to-blue-500 dark:from-white dark:to-blue-500 bg-gradient-to-r bg-clip-text text-transparent sm:text-6xl">
+          <h1 className="text-4xl font-extrabold font-serif leading-tight from-gray-800 to-blue-500 dark:from-white dark:to-blue-500 bg-gradient-to-r bg-clip-text text-transparent sm:text-6xl">
             Hi, I&lsquo;m <br /> Mustafa Ansari
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-2xl sm:text-2xl dark:text-white font-serif">
